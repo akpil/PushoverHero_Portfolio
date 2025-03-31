@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Config.Enums;
-using ObjPool;
 using UI;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -52,17 +51,6 @@ namespace Config
                 var uiBase = elem.GetComponent<UIBase>();
                 _uiPrefabDic.Add(uiBase.UIId, uiBase);
             }
-        }
-        
-        private async void LoadPoolingPrefab<T, TID>(string key, Action<T[]> setPool) where T : MonoBehaviour, IPoolElement<TID>
-        {
-            var objArr = await LoadAssetArr<GameObject>(key);
-            var prefabArr = new T[objArr.Length];
-            for (var i = 0; i < prefabArr.Length; i++)
-            {
-                prefabArr[i] = objArr[i].GetComponent<T>();
-            }
-            setPool?.Invoke(prefabArr);
         }
         
         private async Task<IList<T>> LoadAssetBaseMethod<T>(Dictionary<(IEnumerable, Type), AsyncOperationHandle> handleDic,

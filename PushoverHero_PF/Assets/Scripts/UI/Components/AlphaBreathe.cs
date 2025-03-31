@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 using Utility;
 
 namespace UI.Components
 {
-    class AlphaBreath : MonoBehaviour
+    class AlphaBreathe : MonoBehaviour
     {
         private IColorable _colorable;
         [SerializeField]

@@ -2,7 +2,6 @@
 using Config.Enums;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
 using UI;
 
 

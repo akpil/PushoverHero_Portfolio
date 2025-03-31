@@ -1,6 +1,5 @@
 using Config.Data;
 using Controllers.MerchantGuild;
-using UI;
 using UnityEngine;
 
 namespace Controllers 
